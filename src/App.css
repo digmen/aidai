@@ -32,7 +32,7 @@ body {
   animation: pulse 5s infinite;
   width: 100px;
   height: 100px;
-  filter: drop-shadow(0 0 0.75rem crimson);
+  filter: drop-shadow(0 0 1rem crimson);
 }
 
 @keyframes pulse {
@@ -99,23 +99,23 @@ body {
   }
 
   20% {
-    text-shadow: orange 7px 7px 3px;
+    text-shadow: rgb(233, 22, 22) 7px 7px 3px;
   }
 
   40% {
-    text-shadow: yellow 7px 7px 3px;
+    text-shadow: rgb(255, 0, 144) 7px 7px 3px;
   }
 
   60% {
-    text-shadow: green 7px 7px 3px;
+    text-shadow: rgb(201, 8, 8) 7px 7px 3px;
   }
 
   80% {
-    text-shadow: blue 7px 7px 3px;
+    text-shadow: rgb(255, 0, 234) 7px 7px 3px;
   }
 
   100% {
-    text-shadow: purple 7px 7px 3px;
+    text-shadow: rgb(185, 13, 185) 7px 7px 3px;
   }
 }
 
@@ -124,6 +124,7 @@ body {
   width: 100%;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  transition: all 1s ease-in-out;
 }
 
 .arrow {
