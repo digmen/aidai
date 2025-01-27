@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   font-family: "Poppins", serif;
 }
 
@@ -12,22 +13,26 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-.heart {
-  display: none;
+.pulseContainer,
+.timerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pulse {
   display: block;
-  animation: pulse 5s infinite, glow 5s infinite;
+  animation: pulse 5s infinite;
   width: 100px;
   height: 100px;
+  filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 @keyframes pulse {
@@ -35,39 +40,141 @@ body {
     transform: scale(0);
   }
 
+  10% {
+    transform: scale(1);
+  }
+
   20% {
-    transform: scale(1.5);
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(2);
   }
 
   40% {
-    transform: scale(1.2);
-  }
-
-  60% {
-    transform: scale(1.8);
-  }
-
-  80% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(100);
-  }
-}
-
-@keyframes glow {
-
-  0%,
-  100% {
-    drop-shadow: 0 0 5px red;
+    transform: scale(1);
   }
 
   50% {
-    drop-shadow: 0 0 20px red;
+    transform: scale(3);
+  }
+
+  60% {
+    transform: scale(4);
+  }
+
+  70% {
+    transform: scale(15);
+  }
+
+  80% {
+    transform: scale(20);
+  }
+
+  90% {
+    transform: scale(25);
+  }
+
+  100% {
+    transform: scale(30);
   }
 }
 
 .timer {
   color: white;
+}
+
+.text {
+  color: white;
+  text-shadow: red 7px 7px 3px;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: textPulse 5s infinite;
+}
+
+@keyframes textPulse {
+  0% {
+    text-shadow: red 7px 7px 3px;
+  }
+
+  20% {
+    text-shadow: orange 7px 7px 3px;
+  }
+
+  40% {
+    text-shadow: yellow 7px 7px 3px;
+  }
+
+  60% {
+    text-shadow: green 7px 7px 3px;
+  }
+
+  80% {
+    text-shadow: blue 7px 7px 3px;
+  }
+
+  100% {
+    text-shadow: purple 7px 7px 3px;
+  }
+}
+
+.textContainer {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.arrow {
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  text-shadow: rgb(255, 255, 255) 7px 7px 3px;
+  animation: arrowPulse 5s infinite;
+}
+
+@keyframes arrowPulse {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slides {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  scroll-snap-align: start;
+  gap: 50px;
+}
+
+.slide1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
