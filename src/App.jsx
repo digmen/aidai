@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
   const [isPulsing, setIsPulsing] = useState(false)
-  const [timer, setTimer] = useState(90)
+  const [timer, setTimer] = useState(0)
   const [showHeart, setShowHeart] = useState(true)
   const [showText, setShowText] = useState(false)
 
